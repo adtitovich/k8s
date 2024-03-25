@@ -1,0 +1,103 @@
+{
+  "ignition": {
+    "version": "3.4.0"
+  },
+  "passwd": {
+    "users": [
+      {
+        "groups": [
+          "wheel",
+          "sudo"
+        ],
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGIjnIaaraTaL5DJeJ9jn+KpYAvGOgmbpSSlV2ZN9CkB"
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "files": [
+      {
+        "overwrite": true,
+        "path": "/etc/hostname",
+        "contents": {
+          "compression": "",
+          "source": "data:,master1"
+        },
+        "mode": 420
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/hosts",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/4zLXwqDMAzH8XdPkRME039Wb1OmsDE1sHp/Bm0Yy8jDAoXy5fMjN+GIIxL02/lW9jvXC77vU7H9Vj7K4xyWhWz1x5Zmh5Ryex4AjlKv7UX4zLW7tpWqdACAk9ft10pVNkp1pnXKJqnetF7ZSWowbVA2S42mjcrOUpNp0/AOAAD///1lU8euAQAA"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/sysctl.d/90-k8s.conf",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/4yS347qIBCH730XSWkprRc8CyF0sESYIUCrvv2JPa677p8od/B98ANmXGHOB9hHc1Fy5P0gxA6hMksZWI4Q9Y0IfhBd84WcPwhvxNgPciM+rYL5pB3ls8mT4k+rgawJOkOBvMKkE+VaVNc0TbPv2kEOuxNkhMCSn35kbmdYQsdMCMzkpA0iLWhBtZ8Cgj/ObAJnllDZ0eo6ZygzVyM/vNZadbvG+NLrlOz77vFi+V6sfDNWvopdI4vmoqNJ2tKCVbWy5ULsXGEeqXp33fhSIOuzqXaGct/5m+GxVIMWyrc/qjbpckVLdPJQFH8Ux6C3ijdPc02oidJNWyOjFbKlGH3VESLl670PEKrzoUJm6LQlxJqNPd2baBv/tb/gvwAAAP//KFw/baoCAAA="
+        }
+      },
+      {
+        "path": "/etc/sysctl.d/10-disable-ipv6.conf",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/1JWSMksTkzKSVXwDCgz48pLLdHLLCgz00vOz0vTS8zJ0YNKx4NEFWwVDNGUpKSmJZbmlBBSlppXYFBsgqkKEAAA//80eMvefwAAAA=="
+        }
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/selinux/config",
+        "contents": {
+          "compression": "",
+          "source": "data:,%23%20disabled%20selinux%0ASELINUX%3Ddisabled%0ASELINUXTYPE%3Dtargeted%0A"
+        },
+        "mode": 420
+      },
+      {
+        "path": "/etc/sysctl.d/99-kubernetes-cri.conf",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/1zKMapCMRCF4f6t4sCrExBsXYGLkEly7nUgTuLcUXH3olj5N3/z/eNIN3ZMcbkw6Buc15s6G8oTcSaqaxqow0LU6KCtasx/xsjFta38LtmSqvSedIaUzg04YPdxOu/7rPO0DH+IN/z2dq8AAAD//77g/IqMAAAA"
+        }
+      },
+      {
+        "path": "/etc/modules-load.d/crio-net.conf",
+        "contents": {
+          "compression": "",
+          "source": "data:,%23%20Kernel%20modules%20required%20by%20the%20cri-o%20container%20engine.%0Aoverlay%0Abr_netfilter%0A"
+        }
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/chrony.conf",
+        "contents": {
+          "compression": "",
+          "source": "data:,pool%20time.google.com%20iburst%0Adriftfile%20%2Fvar%2Flib%2Fchrony%2Fdrift%0Amakestep%201.0%203%0Artcsync%0Alogdir%20%2Fvar%2Flog%2Fchrony%0A"
+        },
+        "mode": 420
+      },
+      {
+        "overwrite": true,
+        "path": "/etc/resolv.conf",
+        "contents": {
+          "compression": "",
+          "source": "data:,nameserver%20192.168.168.1%0Anameserver%208.8.8.8%0A"
+        },
+        "mode": 420
+      }
+    ],
+    "links": [
+      {
+        "overwrite": true,
+        "path": "/etc/localtime",
+        "target": "/usr/share/zoneinfo/Europe/Moscow"
+      }
+    ]
+  }
+}
